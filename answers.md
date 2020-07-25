@@ -25,3 +25,4 @@ Please answer the following questions:
     - Given the first eight elements I assumed the question is referring to the Fibonacci sequence, but during testing
     I realised that the final value does not match. As it is fairly close to the 100th number in my list this might be
     due to a rounding error / casting between different data types, so I continued with the Fibonacci sequence.
+    - I implemented the linked list [here](./linkedList.py)
