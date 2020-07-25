@@ -33,14 +33,29 @@ class FibList:
             output += " " + str(cur.content)
         print(output)
 
+    def reverse(self):
+        # need three pointers
+        prev = None
+        cur = self.head
+        next = None
+        while cur is not None:
+            next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next
+        self.head = prev
+
 
 def main():
-    l1 = FibList()
-    l1.println()
-    l2 = FibList(10)
-    l2.println()
-    l3 = FibList(-5)
-    l3.println()
+    small = FibList(10)
+    small.println()
+    small.reverse()
+    small.println()
+
+    full = FibList()
+    full.println()
+    full.reverse()
+    full.println()
 
 
 if __name__ == "__main__":

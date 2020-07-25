@@ -22,3 +22,6 @@ Please answer the following questions:
 5. For a given linked list containing the first 100 numbers of the sequence: 
 0, 1, 1, 2, 3, 5, 8, 13,...,218922995834555200000, provide a solution that returns a linked list in the following order:
 218922995834555200000, ..., 13, 8, 5, 3, 2, 1, 1, 0. Please do not rely on standard packages for queues.
+    - Given the first eight elements I assumed the question is referring to the Fibonacci sequence, but during testing
+    I realised that the final value does not match. As it is fairly close to the 100th number in my list this might be
+    due to a rounding error / casting between different data types, so I continued with the Fibonacci sequence.
