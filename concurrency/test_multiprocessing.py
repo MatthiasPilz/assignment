@@ -42,3 +42,7 @@ if __name__ == "__main__":
         t += main()
         print(str(i) + " ", end='')
     print("Took: {:.5}s on average over {} runs".format(t/m, m))
+    # 0 1 ... 99 Took: 1.9376s on average over 100 runs
+
+    # comparing to the sequential results: 12.838s
+    # 12.838 / 8 = 1.605  ==>  multiprocessing results in almost linear speedup with the number of available cores
