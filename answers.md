@@ -15,6 +15,9 @@ Please answer the following questions:
     Eventually this means the worst case time complexity is O(n²)
 
 4. What is an eigenvalue and an eigenvector?
+    - Given a linear transformation, an eigenvector is a vector that remains essentially unchanged by the 
+    transformation, i.e. up to a scalar factor. This factor is the eigenvalue. With the linear transformation A,
+    the eigenvector v, and the eigenvalue $\lambda$, we have: $Av = \lambda v$.
 
 5. For a given linked list containing the first 100 numbers of the sequence: 
 0, 1, 1, 2, 3, 5, 8, 13,...,218922995834555200000, provide a solution that returns a linked list in the following order:
