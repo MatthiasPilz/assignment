@@ -6,7 +6,7 @@ class Node:
 
 class FibList:
     def __init__(self, n: int=100):
-        if n == 0:
+        if n <= 0:
             self.head = None
         elif n == 1:
             self.head = Node(content=0)
@@ -23,6 +23,9 @@ class FibList:
                 cur = cur.next
 
     def println(self):
+        if self.head is None:
+            print("*** Empty list!")
+            return
         cur = self.head
         output = str(cur.content)
         while cur.next is not None:
@@ -31,7 +34,14 @@ class FibList:
         print(output)
 
 
-l1 = FibList()
-l1.println()
-l2 = FibList(10)
-l2.println()
+def main():
+    l1 = FibList()
+    l1.println()
+    l2 = FibList(10)
+    l2.println()
+    l3 = FibList(-5)
+    l3.println()
+
+
+if __name__ == "__main__":
+    main()
