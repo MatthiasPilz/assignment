@@ -42,3 +42,4 @@ if __name__ == "__main__":
         t += main()
         print(str(i) + " ", end='')
     print("Took: {:.5}s on average over {} runs".format(t/m, m))
+    # 0 1 ... 99 Took: 14.599s on average over 100 runs
