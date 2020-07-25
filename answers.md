@@ -5,6 +5,9 @@ Please answer the following questions:
     - A set is unordered (elements cannot be accessed by index) and every element can only appears once
 
 2. What ways of achieving concurrency do you know? What are the limitations of those ways?
+    - I have not explicitly implemented concurrency by hand before in python. 
+    When using libraries like tensorflow or scipy, I noticed that they are automatically running on multiple
+    cores or make use of the GPU (when the device is properly assigned)
 
 3. What is the worst case time complexity of a quick sort?
 
