@@ -10,6 +10,9 @@ Please answer the following questions:
     cores or make use of the GPU (when the device is properly assigned)
 
 3. What is the worst case time complexity of a quick sort?
+    - For quick sort the input is split into two parts based on a 'randomly' selected pivot point.
+    If this pivot is either the smallest or largest element (for all choices), we end up doing this (n-1) times.
+    Eventually this means the worst case time complexity is O(n²)
 
 4. What is an eigenvalue and an eigenvector?
 
