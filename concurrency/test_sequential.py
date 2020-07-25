@@ -1,25 +1,34 @@
 import time
 
 
-def num_integral(f, x0, x1, n):
+def num_integral_01(f, n, expected, myid):
+    x0 = 0.0
+    x1 = 1.0
     del_x = (x1-x0) / n
     result = 0.0
     for i in range(1, n):
         x = x0 + del_x*i
         result += f(x)
     result = 0.5*del_x*(f(x0) + f(x1) + 2.0*result)
+    print(myid, "--> error:", abs(result-expected))
     return result
+
+
+def sequential(n):
+    for i in range(n):
+        num_integral_01(lambda x: 3*x**2, 1000000, 1.0, i)
 
 
 def main():
     start = time.time()
-    result = num_integral(lambda x: 3*x**2, 0.0, 1.0, 10000000)
+    sequential(100)
     end = time.time()
-    print(result)
     print("Took {:.5}s".format(end-start))
 
 
 if __name__ == "__main__":
     main()
-    # 1.000000000000076
-    # Took 1.2859s
+    # 0 --> error: 4.785061236134425e-13
+    # ...
+    # 99 --> error: 4.785061236134425e-13
+    # Took 13.616s
