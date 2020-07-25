@@ -1,4 +1,5 @@
 import time
+import threading
 
 
 def num_integral_01(f, n, expected, myid):
@@ -14,14 +15,21 @@ def num_integral_01(f, n, expected, myid):
     return result
 
 
-def sequential(n):
+def threaded(n):
+    threads = []
+
     for i in range(n):
-        num_integral_01(lambda x: 3*x**2, 1000000, 1.0, i)
+        t = threading.Thread(target=num_integral_01, args=(lambda x: 3*x**2, 1000000, 1.0, i))
+        threads.append(t)
+        t.start()
+
+    for t in threads:
+        t.join()
 
 
 def main():
     start = time.time()
-    sequential(100)
+    threaded(100)
     end = time.time()
     print("Took {:.5}s".format(end-start))
 
@@ -29,6 +37,6 @@ def main():
 if __name__ == "__main__":
     main()
     # 0 --> error: 4.785061236134425e-13
-    # ... (in order)
+    # ... (not in order)
     # 99 --> error: 4.785061236134425e-13
-    # Took 13.616s
+    # Took 14.881s
