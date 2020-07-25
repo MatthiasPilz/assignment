@@ -1,6 +1,8 @@
 Please answer the following questions:
 
 1. What is the difference between a list and a set?
+    - A list is an ordered data structure where the elements can be accessed directly through an index
+    - A set is unordered (elements cannot be accessed by index) and every element can only appears once
 
 2. What ways of achieving concurrency do you know? What are the limitations of those ways?
 
