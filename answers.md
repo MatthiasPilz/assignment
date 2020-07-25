@@ -8,6 +8,17 @@ Please answer the following questions:
     - I have not explicitly implemented concurrency by hand before in python. 
     When using libraries like tensorflow or scipy, I noticed that they are automatically running on multiple
     cores or make use of the GPU (when the device is properly assigned)
+    - In order to still answer your question I checked online and found an interesting article on 
+    https://towardsdatascience.com/concurrency-in-python-e770c878ab53
+    - After going through the article, I implemented the computation of an integral to test the ideas (I chose an
+    integral because I can easily adjust the computational load by changing the number of intervals, and I can verify
+    the result of the computation)
+    - To guarantee that there is no uncontrolled concurrent access to mutable data, there is the Global Interpreter Lock
+    (GIL) in python. This allows only one thread to run at any time. 
+    - When using the multiprocessing library, we can create several processes which will be executed on the different 
+    cores of the given CPU. Currently I am using a laptop with 8 cores, so I would expect a speedup of this CPU heavy
+    computation to be roughly eightfold.
+    - I will add the results directly in the respective files in [this folder](./concurrency)
 
 3. What is the worst case time complexity of a quick sort?
     - For quick sort the input is split into two parts based on a 'randomly' selected pivot point.
