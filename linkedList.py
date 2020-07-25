@@ -22,22 +22,19 @@ class FibList:
                 i += 1
                 cur = cur.next
 
-    def println(self):
+    def __str__(self):
         if self.head is None:
-            print("*** Empty list!")
-            return
+            return "*** Empty list!"
         cur = self.head
         output = str(cur.content)
         while cur.next is not None:
             cur = cur.next
             output += " " + str(cur.content)
-        print(output)
+        return output
 
     def reverse(self):
-        # need three pointers
         prev = None
         cur = self.head
-        next = None
         while cur is not None:
             next = cur.next
             cur.next = prev
@@ -47,15 +44,10 @@ class FibList:
 
 
 def main():
-    small = FibList(10)
-    small.println()
-    small.reverse()
-    small.println()
-
-    full = FibList()
-    full.println()
-    full.reverse()
-    full.println()
+    example = FibList()
+    print("Given list:", example)
+    example.reverse()
+    print("Reversed list:", example)
 
 
 if __name__ == "__main__":
